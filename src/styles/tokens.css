@@ -1,0 +1,34 @@
+:root {
+  /* Brand indigo */
+  --color-primary-50: #eef0ff;
+  --color-primary-100: #e0e3ff;
+  --color-primary-600: #2f27ed;
+  --color-primary-700: #2318c4;
+
+  /* Dark navy sections (AI assistant, CTA banner, footer) */
+  --color-navy-900: #05081c;
+  --color-navy-800: #0a0f2e;
+  --color-navy-border: #1c2140;
+
+  /* Neutrals */
+  --color-text-heading: #0b0f19;
+  --color-text-body: #4b5563;
+  --color-text-muted: #6b7280;
+  --color-white: #ffffff;
+  --color-bg-alt: #f8f9fc;
+  --color-border: #e5e7eb;
+
+  /* Typography */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Spacing / layout */
+  --container-max: 1280px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 999px;
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px rgba(16, 24, 40, 0.06), 0 1px 2px rgba(16, 24, 40, 0.04);
+  --shadow-lg: 0 20px 40px rgba(16, 24, 40, 0.12);
+}
