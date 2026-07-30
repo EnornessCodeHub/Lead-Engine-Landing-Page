@@ -1,20 +1,20 @@
 .faq {
   background: var(--color-bg-alt);
-  padding: 40px 0;
+  padding: clamp(32px, 4vw, 40px) 0;
 }
 
 .faq__intro {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: clamp(26px, 3.5vw, 40px);
 }
 
 .faq__heading {
-  font-size: 34px;
+  font-size: clamp(24px, 3.4vw, 34px);
 }
 
 .faq__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 14px;
 }
 
@@ -22,7 +22,7 @@
   background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
-  padding: 4px 20px;
+  padding: 4px clamp(14px, 2vw, 20px);
   align-self: start;
 }
 
@@ -65,8 +65,13 @@
   padding-bottom: 18px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .faq__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Tang column me jawab lamba ho jata hai — clip hone se bachao */
+  .faq__answer-wrap.is-open {
+    max-height: 420px;
   }
 }

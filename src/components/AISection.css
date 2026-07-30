@@ -1,6 +1,6 @@
 .ai-section {
   /* background: var(--color-navy-900); */
-  padding: 60px 0 40px;
+  padding: clamp(40px, 5vw, 60px) 0 clamp(32px, 4vw, 40px);
   color: var(--color-white);
   overflow: hidden;
   background: url("/ai-section__illustration_bg.png") center / cover no-repeat;
@@ -9,8 +9,13 @@
 .ai-section__inner {
   display: grid;
   grid-template-columns: 1.2fr 1.1fr 0.6fr;
-  gap: 40px;
+  gap: clamp(24px, 3vw, 40px);
   align-items: center;
+}
+
+/* Grid items ko shrink hone do, warna orbit column ko chaura kar deta hai */
+.ai-section__inner > * {
+  min-width: 0;
 }
 
 .eyebrow--light {
@@ -26,8 +31,10 @@
 
 .ai-orbit {
   position: relative;
-  width: 360px;
-  height: 360px;
+  /* Satellites orbit se bahar nikalte hain, is liye viewport se thora andar rakho */
+  width: min(360px, 100%, 74vw);
+  aspect-ratio: 1;
+  height: auto;
   border-radius: 50%;
   border: 1px dashed rgba(255, 255, 255, 0.15);
   display: flex;
@@ -49,8 +56,8 @@
 }
 
 .ai-orbit__core {
-  width: 200px;
-  height: 200px;
+  width: 56%;
+  height: 56%;
   /* border-radius: 50%; */
   /* background: radial-gradient(circle at 35% 30%, #1a1a5c, var(--color-navy-800)); */
   /* border: 1px solid rgba(47, 39, 237, 0.5); */
@@ -63,7 +70,7 @@
 }
 
 .ai-orbit__robot {
-  width: 200px;
+  width: 100%;
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 0 14px rgba(47, 39, 237, 0.5));
@@ -79,9 +86,9 @@
 }
 
 .ai-orbit__satellite {
-  width: 60px;
+  width: clamp(38px, 12vw, 60px);
   max-width: none;
-  height: 60px;
+  height: clamp(38px, 12vw, 60px);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   background: var(--color-navy-800);
@@ -90,10 +97,10 @@
 }
 
 .ai-section__heading {
-  font-size: 32px;
+  font-size: clamp(24px, 3.2vw, 32px);
   font-weight: 800;
   color: var(--color-white);
-  margin-bottom: 22px;
+  margin-bottom: clamp(16px, 2.5vw, 22px);
 }
 
 .ai-section__steps {
@@ -112,7 +119,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 15px;
+  font-size: clamp(14px, 1.6vw, 15px);
   font-weight: 500;
   color: #cbd5e1;
   line-height: 1.3;
@@ -134,7 +141,7 @@
   background: rgba(47, 39, 237, 0.08);
   border: 1px solid rgba(47, 39, 237, 0.4);
   border-radius: var(--radius-md);
-  padding: 28px 24px;
+  padding: clamp(20px, 2.5vw, 28px) clamp(18px, 2.5vw, 24px);
   text-align: center;
 }
 
@@ -148,6 +155,11 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto 16px;
+}
+
+.ai-section__card-icon svg {
+  width: clamp(64px, 9vw, 100px);
+  height: auto;
 }
 
 .ai-section__card h3 {
@@ -167,10 +179,36 @@
   width: 100%;
 }
 
-@media (max-width: 1024px) {
+/* Laptop: 3 columns tang par jate hain -> illustration + content, card neeche */
+@media (max-width: 1200px) {
+  .ai-section__inner {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  }
+
+  /* width:100% zaroori hai — sirf `margin:auto` grid item ko content-size par shrink kar deta hai */
+  .ai-section__card {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 420px;
+    margin-inline: auto;
+  }
+}
+
+/* Tablet aur mobile: single column */
+@media (max-width: 860px) {
   .ai-section__inner {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+
+  .ai-section__content {
+    text-align: center;
+  }
+
+  .ai-section__steps {
+    align-items: stretch;
+    max-width: 480px;
+    margin: 0 auto;
   }
 
   .ai-section__steps li {
@@ -178,7 +216,13 @@
   }
 
   .ai-section__card {
-    max-width: 320px;
-    margin: 0 auto;
+    max-width: 480px;
+  }
+}
+
+/* Mobile: card ko baaki cards ki tarah poori width do */
+@media (max-width: 640px) {
+  .ai-section__card {
+    max-width: none;
   }
 }

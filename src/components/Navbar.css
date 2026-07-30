@@ -8,11 +8,11 @@
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  height: 84px;
+  height: var(--navbar-h);
 }
 
 .navbar__logo {
-  height: 60px;
+  height: clamp(40px, 6vw, 60px);
   width: auto;
 }
 
@@ -30,6 +30,7 @@
   font-weight: 500;
   color: var(--color-text-heading);
   border-radius: var(--radius-sm);
+  white-space: nowrap;
 }
 
 .navbar__link:hover {
@@ -45,22 +46,44 @@
   background: none;
   border: none;
   color: var(--color-text-heading);
-  padding: 4px;
+  padding: 8px;
+  margin-right: -8px;
 }
 
-@media (max-width: 900px) {
+/* Laptop: nav ko thora compact karo taake CTA ke saath fit ho jaye */
+@media (max-width: 1100px) {
+  .navbar__inner {
+    gap: 12px;
+  }
+
+  .navbar__link {
+    padding: 10px 10px;
+    font-size: 14px;
+  }
+}
+
+/* Tablet aur mobile: hamburger menu */
+@media (max-width: 960px) {
+  .navbar {
+    position: relative;
+    z-index: 20;
+  }
+
   .navbar__links {
     position: absolute;
-    top: 84px;
+    top: var(--navbar-h);
     left: 0;
     right: 0;
     background: var(--color-white);
     border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
     flex-direction: column;
     align-items: stretch;
-    padding: 12px 24px 20px;
+    padding: 12px var(--container-pad) 20px;
     gap: 4px;
     display: none;
+    max-height: calc(100dvh - var(--navbar-h));
+    overflow-y: auto;
   }
 
   .navbar__links--open {
@@ -68,7 +91,8 @@
   }
 
   .navbar__link {
-    padding: 12px 8px;
+    padding: 13px 8px;
+    font-size: 15px;
   }
 
   .navbar__cta--desktop {
@@ -83,9 +107,5 @@
 
   .navbar__menu-toggle {
     display: block;
-  }
-
-  .navbar {
-    position: relative;
   }
 }

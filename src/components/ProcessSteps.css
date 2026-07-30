@@ -1,16 +1,16 @@
 .process__intro {
   text-align: center;
   max-width: 640px;
-  margin: 0 auto 48px;
+  margin: 0 auto clamp(28px, 4vw, 48px);
 }
 
 .process__heading {
-  font-size: 34px;
+  font-size: clamp(24px, 3.4vw, 34px);
   margin-bottom: 10px;
 }
 
 .process__subtext {
-  font-size: 16px;
+  font-size: clamp(14.5px, 1.6vw, 16px);
   color: var(--color-text-body);
 }
 
@@ -18,6 +18,7 @@
   display: flex;
   align-items: stretch;
   gap: 0;
+  flex-wrap: wrap;
 }
 
 .process__step-wrap {
@@ -39,7 +40,7 @@
   border: 1px solid #eef0f6;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
-  padding: 28px 20px;
+  padding: clamp(20px, 2.5vw, 28px) clamp(14px, 2vw, 20px);
   flex: 1;
   min-width: 0;
   display: flex;
@@ -69,14 +70,15 @@
   flex: 1;
 }
 
-@media (max-width: 1024px) {
+/* Laptop: 5 cards ek row me bohot patle ho jate hain -> 3 per row */
+@media (max-width: 1200px) {
   .process__steps {
-    flex-wrap: wrap;
+    gap: 16px;
   }
 
   .process__step-wrap {
-    flex: 1 1 calc(50% - 12px);
-    min-width: 220px;
+    flex: 1 1 calc((100% - 32px) / 3);
+    min-width: 200px;
   }
 
   .process__arrow {
@@ -84,12 +86,38 @@
   }
 }
 
+/* Tablet: 2 per row */
+@media (max-width: 900px) {
+  .process__step-wrap {
+    flex: 1 1 calc((100% - 16px) / 2);
+    min-width: 0;
+  }
+}
+
+/* Mobile: 1 per row */
 @media (max-width: 560px) {
   .process__step-wrap {
     flex: 1 1 100%;
   }
 
-  .process__heading {
-    font-size: 26px;
+  /* Mobile par card ko horizontal karo: icon | (title + text) */
+  .process__card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    column-gap: 16px;
+    text-align: left;
+  }
+
+  .process__icon {
+    grid-row: 1 / 3;
+    align-self: center;
+    margin-bottom: 0;
+    max-width: 56px;
+    height: 50px;
+  }
+
+  .process__description {
+    flex: none;
   }
 }

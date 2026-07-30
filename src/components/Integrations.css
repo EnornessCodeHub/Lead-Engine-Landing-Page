@@ -1,11 +1,11 @@
 .integrations.section {
   text-align: center;
-  padding-top: 48px;
+  padding-top: clamp(32px, 4vw, 48px);
   padding-bottom: 0px;
 }
 
 .integrations__heading {
-  font-size: 28px;
+  font-size: clamp(22px, 2.8vw, 28px);
   margin-bottom: 20px;
 }
 
@@ -13,25 +13,26 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 14px;
+  gap: clamp(8px, 1.4vw, 14px);
 }
 
 .integrations__chip {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: clamp(7px, 1vw, 10px);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
-  padding: 12px 20px;
-  font-size: 14px;
+  padding: clamp(9px, 1.2vw, 12px) clamp(13px, 2vw, 20px);
+  font-size: clamp(12.5px, 1.4vw, 14px);
   font-weight: 600;
   color: var(--color-text-heading);
   box-shadow: var(--shadow-card);
 }
 
 .integrations__chip img {
-  width: 22px;
-  height: 22px;
+  width: clamp(18px, 2.2vw, 22px);
+  height: clamp(18px, 2.2vw, 22px);
+  flex-shrink: 0;
 }
 
 .integrations__more {

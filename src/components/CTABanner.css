@@ -6,14 +6,14 @@
 
 .cta-banner__inner {
   display: grid;
-  grid-template-columns: 1.1fr 1.6fr 0.9fr;
-  gap: 32px;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.6fr) minmax(0, 0.9fr);
+  gap: clamp(20px, 2.5vw, 32px);
   align-items: center;
 }
 
 .cta-banner__text h2 {
   color: var(--color-white);
-  font-size: 24px;
+  font-size: clamp(20px, 2.4vw, 24px);
   margin-bottom: 8px;
 }
 
@@ -27,7 +27,8 @@
 .cta-banner__trust {
   display: flex;
   flex-direction: row;
-  gap: 28px;
+  flex-wrap: wrap;
+  gap: 16px clamp(14px, 2vw, 24px);
 }
 
 .cta-banner__trust-item {
@@ -96,9 +97,23 @@
   color: #9aa5b1;
 }
 
+/* Laptop: 3 trust items 3rd column me fit nahi hote -> trust ko poori row do */
+@media (max-width: 1250px) {
+  .cta-banner__inner {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.9fr);
+    row-gap: 24px;
+  }
+
+  .cta-banner__trust {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: space-between;
+  }
+}
+
 @media (max-width: 900px) {
   .cta-banner__inner {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     text-align: center;
   }
 
@@ -107,11 +122,39 @@
   }
 
   .cta-banner__trust {
+    grid-row: auto;
     justify-content: center;
-    flex-wrap: wrap;
   }
 
   .cta-banner__trust-item {
     justify-content: center;
+  }
+
+  .cta-banner__action .btn {
+    max-width: 340px;
+  }
+}
+
+/* Chhota mobile: nowrap titles ko wrap hone do */
+@media (max-width: 480px) {
+  /* Group content jitna chaura ho aur center me baithe — badges aapas me aligned rahen */
+  .cta-banner__trust {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    width: fit-content;
+    max-width: 100%;
+    margin-inline: auto;
+  }
+
+  .cta-banner__trust-item {
+    width: 100%;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .cta-banner__trust-title,
+  .cta-banner__trust-subtitle {
+    white-space: normal;
   }
 }
