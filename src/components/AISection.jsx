@@ -1,17 +1,19 @@
 import { Clock, ArrowRight, Check } from "lucide-react";
 import { scrollToBooking } from "../utils/scrollToBooking";
-import whatsapp from "../assets/icons/integration-whatsapp.svg";
-import messenger from "../assets/icons/integration-messenger.svg";
 import instagram from "../assets/icons/integration-instagram.svg";
+import facebook from "../assets/icons/integration-facebook.svg";
+import whatsapp from "../assets/icons/integration-whatsapp.svg";
+import x from "../assets/icons/integration-x.svg";
+import threads from "../assets/icons/integration-threads.svg";
 import "./AISection.css";
 
 const ORBIT_RADIUS_PERCENT = 48.5;
 const SATELLITES = [
-  { icon: whatsapp, baseAngle: 0 },
-  { icon: messenger, baseAngle: 72 },
-  { icon: messenger, baseAngle: 144 },
-  { icon: instagram, baseAngle: 216 },
-  { icon: whatsapp, baseAngle: 288 },
+  { icon: instagram, baseAngle: 0 },
+  { icon: facebook, baseAngle: 72 },
+  { icon: whatsapp, baseAngle: 144 },
+  { icon: x, baseAngle: 216 },
+  { icon: threads, baseAngle: 288 },
 ];
 
 function orbitPoint(angleDeg) {

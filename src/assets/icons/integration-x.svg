@@ -1,0 +1,11 @@
+<svg overflow="visible" style="display: block;" width="24.9839" height="24.9839" viewBox="0 0 24.9839 24.9839" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="IconX" clip-path="url(#clip0_x)">
+<path d="M12.4919 24.9839C19.391 24.9839 24.9839 19.391 24.9839 12.4919C24.9839 5.59283 19.391 0 12.4919 0C5.59283 0 0 5.59283 0 12.4919C0 19.391 5.59283 24.9839 12.4919 24.9839Z" fill="#000000"/>
+<path d="M17.35 7.2h-1.52l-2.58 3.05-2.95-3.05H7.15l3.72 3.85L7.05 17.78h1.52l2.78-3.28 3.18 3.28h3.15l-3.9-4.05L17.35 7.2zm-1.05 9.58h-.84L8.72 8.12h.9l6.68 8.66z" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_x">
+<rect width="24.9839" height="24.9839" fill="white"/>
+</clipPath>
+</defs>
+</svg>
