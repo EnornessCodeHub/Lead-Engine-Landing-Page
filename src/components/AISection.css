@@ -42,6 +42,33 @@
   justify-content: center;
 }
 
+@keyframes ai-orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ai-orbit-counter {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+.ai-orbit__spin {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: ai-orbit-spin 24s linear infinite;
+  will-change: transform;
+}
+
 .ai-orbit__lines {
   position: absolute;
   inset: 0;
@@ -58,15 +85,12 @@
 .ai-orbit__core {
   width: 56%;
   height: 56%;
-  /* border-radius: 50%; */
-  /* background: radial-gradient(circle at 35% 30%, #1a1a5c, var(--color-navy-800)); */
-  /* border: 1px solid rgba(105, 111, 213, 0.5); */
-  /* box-shadow: 0 0 60px rgba(105, 111, 213, 0.45); */
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  pointer-events: none;
 }
 
 .ai-orbit__robot {
@@ -81,7 +105,6 @@
   position: absolute;
   width: 0;
   height: 0;
-  /* transform: translate(-50%, -50%); */
   z-index: 1;
 }
 
@@ -90,10 +113,24 @@
   max-width: none;
   height: clamp(38px, 12vw, 60px);
   border-radius: 50%;
-  transform: translate(-50%, -50%);
   background: var(--color-navy-800);
   padding: 9px;
   box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.04), 0 0 20px rgba(105, 111, 213, 0.3);
+  /* orbit ke sath ghoomen, lekin khud seedhe rahen */
+  transform: translate(-50%, -50%);
+  animation: ai-orbit-counter 24s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-orbit__spin,
+  .ai-orbit__satellite {
+    animation: none;
+  }
+
+  .ai-orbit__satellite {
+    transform: translate(-50%, -50%);
+  }
 }
 
 .ai-section__heading {

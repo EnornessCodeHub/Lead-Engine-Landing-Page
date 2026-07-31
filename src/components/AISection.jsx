@@ -39,24 +39,26 @@ function AISection() {
       <div className="container ai-section__inner">
         <div className="ai-section__illustration">
           <div className="ai-orbit">
-            <svg className="ai-orbit__lines" viewBox="0 0 100 100" aria-hidden="true">
+            <div className="ai-orbit__spin">
+              <svg className="ai-orbit__lines" viewBox="0 0 100 100" aria-hidden="true">
+                {SATELLITES.map((sat, i) => {
+                  const { x, y } = orbitPoint(sat.baseAngle);
+                  return <line key={i} x1="50" y1="50" x2={x} y2={y} />;
+                })}
+              </svg>
               {SATELLITES.map((sat, i) => {
                 const { x, y } = orbitPoint(sat.baseAngle);
-                return <line key={i} x1="50" y1="50" x2={x} y2={y} />;
+                return (
+                  <div
+                    key={i}
+                    className="ai-orbit__satellite-pos"
+                    style={{ top: `${y}%`, left: `${x}%` }}
+                  >
+                    <img src={sat.icon} alt="" className="ai-orbit__satellite" />
+                  </div>
+                );
               })}
-            </svg>
-            {SATELLITES.map((sat, i) => {
-              const { x, y } = orbitPoint(sat.baseAngle);
-              return (
-                <div
-                  key={i}
-                  className="ai-orbit__satellite-pos"
-                  style={{ top: `${y}%`, left: `${x}%` }}
-                >
-                  <img src={sat.icon} alt="" className="ai-orbit__satellite" />
-                </div>
-              );
-            })}
+            </div>
             <div className="ai-orbit__core">
               <img src="/ai-section__illustration.png" alt="AI Robot" className="ai-orbit__robot" />
             </div>
