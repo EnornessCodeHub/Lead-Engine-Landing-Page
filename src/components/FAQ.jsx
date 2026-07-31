@@ -4,7 +4,7 @@ import "./FAQ.css";
 
 const FAQS = [
   {
-    q: "What is the Lead Management Engine?",
+    q: "What is the AI Lead Conversion Platform?",
     a: "It's an AI-powered platform that captures leads from all your channels, engages them instantly, and nurtures them until they convert into paying customers.",
   },
   {

@@ -99,14 +99,14 @@ function Footer() {
             className="btn btn--primary footer__cta-btn"
             onClick={scrollToBooking}
           >
-            Book a Free Demo
+            Book A Demo
             <ArrowRight size={16} />
           </button>
         </div>
       </div>
 
       <div className="container footer__bottom">
-        <p>© 2025 Lead Engine. All rights reserved.</p>
+        <p>© 2026 AI Lead Conversion Platform. All rights reserved.</p>
       </div>
     </footer>
   );

@@ -19,7 +19,7 @@ function CTABanner() {
             Start Converting Them.
           </h2>
           <p>
-            Book a free demo today and see how our AI Lead Management Platform can grow
+            Book a demo today and see how our AI Lead Conversion Platform can grow
             your business.
           </p>
         </div>
@@ -28,7 +28,7 @@ function CTABanner() {
           {TRUST_ITEMS.map(({ icon: Icon, title, subtitle }) => (
             <div key={title} className="cta-banner__trust-item">
               <span className="cta-banner__badge">
-                <Icon size={18} />
+                <Icon size={28} strokeWidth={1.75} />
               </span>
               <div>
                 <p className="cta-banner__trust-title">{title}</p>
@@ -40,7 +40,7 @@ function CTABanner() {
 
         <div className="cta-banner__action">
           <button type="button" className="btn btn--primary" onClick={scrollToBooking}>
-            Book Your Free Demo
+            Book A Demo
             <ArrowRight size={18} />
           </button>
           <p className="cta-banner__note">No Credit Card Required</p>

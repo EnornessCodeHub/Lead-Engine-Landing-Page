@@ -1,0 +1,64 @@
+.hero-nodes {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 220 / 400;
+}
+
+.hero-nodes__svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.hero-nodes__dot {
+  offset-rotate: 0deg;
+  animation: hero-nodes-travel 3s linear infinite;
+}
+
+@keyframes hero-nodes-travel {
+  from {
+    offset-distance: 0%;
+  }
+  to {
+    offset-distance: 100%;
+  }
+}
+
+.hero-nodes__badges {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-nodes__badge {
+  position: absolute;
+  left: 0;
+  width: 124px;
+  box-sizing: border-box;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(90deg, var(--color-primary-700), var(--color-primary-600));
+  color: var(--color-white);
+  padding: 8px 10px;
+  border-radius: var(--radius-md);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(45, 49, 137, 0.25);
+}
+
+.hero-nodes__badge img {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-nodes__dot {
+    animation: none;
+  }
+}

@@ -1,9 +1,6 @@
+const BOOKING_URL =
+  "https://api.leadconnectorhq.com/widget/booking/qoVJruBSMX6pmpc0jY1r";
+
 export function scrollToBooking() {
-  const el = document.getElementById("book-demo");
-  if (!el) return;
-  el.scrollIntoView({ behavior: "smooth", block: "center" });
-  const nameInput = el.querySelector("input");
-  if (nameInput) {
-    window.setTimeout(() => nameInput.focus(), 400);
-  }
+  window.open(BOOKING_URL, "_blank", "noopener,noreferrer");
 }

@@ -89,7 +89,7 @@ function AISection() {
           </h3>
           <p>Never sleeps. <br/>Never misses. <br/>Always converts. <br/></p>
           <button type="button" className="btn btn--primary" onClick={scrollToBooking}>
-            Book a Free Demo
+            Book A Demo
             <ArrowRight size={16} />
           </button>
         </div>

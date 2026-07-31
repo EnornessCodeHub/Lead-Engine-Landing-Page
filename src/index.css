@@ -38,7 +38,7 @@ h3,
 h4 {
   margin: 0;
   color: var(--color-text-heading);
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.15;
   text-wrap: balance;
 }
@@ -71,7 +71,8 @@ svg {
 
 #root {
   min-height: 100vh;
-  overflow-x: hidden;
+  /* overflow-x: hidden sticky navbar tod deta hai; clip same effect + sticky kaam karta hai */
+  overflow-x: clip;
 }
 
 .container {
@@ -85,7 +86,7 @@ svg {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-md);
   font-weight: 600;
   font-size: 15px;
   padding: 14px 24px;
@@ -103,14 +104,14 @@ svg {
 }
 
 .btn--primary {
-  background: var(--color-primary-600);
+  background: linear-gradient(90deg, var(--color-primary-700), var(--color-primary-600));
   color: var(--color-white);
 }
 
 .btn--primary:hover {
-  background: var(--color-primary-700);
+  background: linear-gradient(90deg, var(--color-primary-700), var(--color-primary-700));
   transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(47, 39, 237, 0.28);
+  box-shadow: 0 6px 16px rgba(105, 111, 213, 0.28);
 }
 
 .btn:active {
@@ -140,7 +141,7 @@ svg {
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--color-primary-600);
+  color: var(--color-primary-700);
   margin-bottom: 12px;
 }
 

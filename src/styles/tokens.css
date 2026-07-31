@@ -1,17 +1,17 @@
 :root {
-  /* Brand indigo */
-  --color-primary-50: #eef0ff;
-  --color-primary-100: #e0e3ff;
-  --color-primary-600: #2f27ed;
-  --color-primary-700: #2318c4;
+  /* Brand accent (matches enorness.com) */
+  --color-primary-50: #eef0fb;
+  --color-primary-100: #e1e3f7;
+  --color-primary-600: #696fd5;
+  --color-primary-700: #2d3189;
 
-  /* Dark navy sections (AI assistant, CTA banner, footer) */
-  --color-navy-900: #05081c;
-  --color-navy-800: #0a0f2e;
-  --color-navy-border: #1c2140;
+  /* Dark sections (AI assistant, CTA banner, footer) — matches enorness.com near-black */
+  --color-navy-900: #0a0a14;
+  --color-navy-800: #14141f;
+  --color-navy-border: #24242f;
 
   /* Neutrals */
-  --color-text-heading: #0b0f19;
+  --color-text-heading: #0a0a14;
   --color-text-body: #4b5563;
   --color-text-muted: #6b7280;
   --color-white: #ffffff;
@@ -19,7 +19,7 @@
   --color-border: #e5e7eb;
 
   /* Typography */
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   /* Spacing / layout */
   --container-max: 1280px;

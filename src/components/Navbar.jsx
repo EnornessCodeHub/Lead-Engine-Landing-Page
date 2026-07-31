@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ArrowRight, Menu, X } from "lucide-react";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.webp";
 import { scrollToBooking } from "../utils/scrollToBooking";
 import "./Navbar.css";
 
@@ -42,7 +42,7 @@ function Navbar() {
               scrollToBooking();
             }}
           >
-            Book a Free Demo
+            Book A Demo
             <ArrowRight size={18} />
           </button>
         </nav>
@@ -52,7 +52,7 @@ function Navbar() {
           className="btn btn--primary navbar__cta navbar__cta--desktop"
           onClick={scrollToBooking}
         >
-          Book a Free Demo
+          Book A Demo
           <ArrowRight size={18} />
         </button>
 
