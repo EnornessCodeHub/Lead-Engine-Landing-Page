@@ -53,3 +53,5 @@ coverage/
 *.tmp
 *.temp
 .cache/
+
+reference/ghl-bot-config.md
