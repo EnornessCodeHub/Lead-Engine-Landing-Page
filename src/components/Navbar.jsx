@@ -8,8 +8,8 @@ const NAV_LINKS = [
   { label: "Features", href: "#features" },
   { label: "How It Works", href: "#how-it-works" },
   { label: "Industries", href: "#industries" },
-  { label: "Pricing", href: "#" },
-  { label: "Resources", href: "#" },
+  // { label: "Pricing", href: "#" },
+  // { label: "Resources", href: "https://enorness.com/blog", external: true },
 ];
 
 function Navbar() {
@@ -27,6 +27,9 @@ function Navbar() {
               href={link.href}
               className="navbar__link"
               onClick={() => setMenuOpen(false)}
+              {...(link.external
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
             >
               {link.label}
             </a>

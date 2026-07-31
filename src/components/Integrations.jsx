@@ -19,7 +19,7 @@ const INTEGRATIONS = [
 
 function Integrations() {
   return (
-    <section className="integrations section">
+    <section className="integrations section" id="integrations">
       <div className="container">
         <h2 className="integrations__heading">Seamless Integrations</h2>
         <div className="integrations__grid">

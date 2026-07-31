@@ -10,23 +10,38 @@ import "./Footer.css";
 const COLUMNS = [
   {
     title: "Platform",
-    links: ["Features", "How It Works", "Integrations", "Pricing"],
+    links: [
+      { label: "Features", href: "#features" },
+      { label: "How It Works", href: "#how-it-works" },
+      { label: "Integrations", href: "#integrations" },
+      // { label: "Pricing", href: "#" },
+    ],
   },
   {
     title: "Resources",
-    links: ["Blog", "Case Studies", "Help Center", "Guides"],
+    links: [
+      { label: "Blog", href: "https://enorness.com/blog", external: true },
+      { label: "Case Studies", href: "https://enorness.com/case-studies", external: true },
+      // { label: "Help Center", href: "#" },
+      // { label: "Guides", href: "#" },
+    ],
   },
   {
     title: "Company",
-    links: ["About Us", "Contact Us", "Privacy Policy", "Terms of Service"],
+    links: [
+      { label: "About Us", href: "https://enorness.com/about", external: true },
+      { label: "Contact Us", href: "https://enorness.com/contact", external: true },
+      { label: "Privacy Policy", href: "https://enorness.com/privacy-policy", external: true },
+      { label: "Terms of Service", href: "https://enorness.com/terms-of-service", external: true },
+    ],
   },
 ];
 
 const SOCIALS = [
-  { icon: facebook, label: "Facebook" },
-  { icon: instagram, label: "Instagram" },
-  { icon: linkedin, label: "LinkedIn" },
-  { icon: youtube, label: "YouTube" },
+  { icon: facebook, label: "Facebook", href: "#" },
+  { icon: instagram, label: "Instagram", href: "#" },
+  { icon: linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/enorness" },
+  { icon: youtube, label: "YouTube", href: "#" },
 ];
 
 function Footer() {
@@ -41,7 +56,15 @@ function Footer() {
           </p>
           <div className="footer__socials">
             {SOCIALS.map((s) => (
-              <a href="#" key={s.label} aria-label={s.label} className="footer__social">
+              <a
+                href={s.href}
+                key={s.label}
+                aria-label={s.label}
+                className="footer__social"
+                {...(s.href.startsWith("http")
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
+              >
                 <img src={s.icon} alt="" />
               </a>
             ))}
@@ -53,8 +76,15 @@ function Footer() {
             <h4>{col.title}</h4>
             <ul>
               {col.links.map((link) => (
-                <li key={link}>
-                  <a href="#">{link}</a>
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    {...(link.external
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
+                  >
+                    {link.label}
+                  </a>
                 </li>
               ))}
             </ul>

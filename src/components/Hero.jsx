@@ -110,9 +110,9 @@ function Hero() {
  
         </div> */}
 
-        <a href="#" className="hero__email-link">
+        {/* <a href="#" className="hero__email-link">
           Not ready to book? Get the details by email instead
-        </a>
+        </a> */}
 
         <div className="hero__trust">
           <span>
